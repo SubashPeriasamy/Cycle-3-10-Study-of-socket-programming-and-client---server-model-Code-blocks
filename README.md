@@ -24,16 +24,15 @@ To write a Socket program to transfer data between Client and Server.
 
 Server Side:
 
-#include <stdio.h>
-#include <winsock2.h>
 
-int main() {
+    #include <stdio.h>
+    #include <winsock2.h>
+    int main() {
     WSADATA wsa;
     SOCKET server_sock, client_sock;
     struct sockaddr_in server, client;
     int c, recv_size;
     char client_message[2000];
-
     if (WSAStartup(MAKEWORD(2,2), &wsa) != 0) {
         printf("WSAStartup failed: %d\n", WSAGetLastError());
         return 1;
@@ -80,17 +79,16 @@ int main() {
 }
 Client Side:
 
-#include <stdio.h>
-#include <string.h>
-#include <winsock2.h>
 
-int main() {
+    #include <stdio.h>
+    #include <string.h>
+    #include <winsock2.h>
+    int main() {
     WSADATA wsa;
     SOCKET sock;
     struct sockaddr_in server;
     char message[1000], server_reply[2000];
     int recv_size;
-
     if (WSAStartup(MAKEWORD(2,2), &wsa) != 0) {
         printf("WSAStartup failed: %d\n", WSAGetLastError());
         return 1;
@@ -128,6 +126,8 @@ int main() {
     WSACleanup();
     return 0;
 }
-    
+## OUTPUT
+<img width="1283" height="680" alt="WhatsApp Image 2026-05-20 at 8 42 07 AM" src="https://github.com/user-attachments/assets/0d76acf7-246d-4e3d-871a-bb74e7e7f389" />
+ 
 ## 🎯 RESULT
 Thus, a socket program was successfully written to transfer data between client and server, and its performance was studied.
